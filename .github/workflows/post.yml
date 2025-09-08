@@ -1,0 +1,20 @@
+name: Auto Blogger Post
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # run every 6 hours
+  workflow_dispatch:       # manual run button
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - run: npm install
+      - run: node index.js
+        env:
+          BLOGGER_API_KEY: ${{ secrets.BLOGGER_API_KEY }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
