@@ -3,7 +3,7 @@ name: Auto Blogger Post
 on:
   schedule:
     - cron: "0 */6 * * *"   # run every 6 hours
-  workflow_dispatch:       # manual run button
+  workflow_dispatch:        # manual run button
 
 jobs:
   build:
@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-    with:
-    node-version: "20"
+        with:
+          node-version: "20"
       - run: npm install
       - run: node index.js
         env:
