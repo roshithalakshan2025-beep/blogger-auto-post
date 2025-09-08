@@ -2,9 +2,8 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 
 // Blogger API Config
-const API_KEY = process.env.AIzaSyC-QnGpRQX9OlDiOEfr-xAGVCW36eHqIfI;   // set in GitHub Secrets
-const BLOG_ID = process.env.3603771571155556347;   // set in GitHub Secrets
-
+const API_KEY = process.env.BLOGGER_API_KEY;   // set in GitHub Secrets
+const BLOG_ID = process.env.BLOGGER_BLOG_ID;   // set in GitHub Secrets
 // Ad Code
 const AD_CODE = `
 <script type="text/javascript">
